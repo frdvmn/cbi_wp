@@ -34,8 +34,8 @@
         <div class="head__row">
             <img src="<?= has_custom_logo() ? wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0] : '' ?>" alt="Центр ближневосточных исследований - логотип" class="head__logo">
             <div class="head__text">
-                <h1 class="head__title"><?= get_bloginfo('name'); ?></h1>
-                <p class="head__subtitle"><?= get_bloginfo('description'); ?>
+                <h1 class="head__title" data-aos="fade-up"><?= get_bloginfo('name'); ?></h1>
+                <p class="head__subtitle" data-aos="fade-up"><?= get_bloginfo('description'); ?>
                 </p>
             </div>
         </div>
@@ -44,13 +44,13 @@
     <!-- Основная миссия -->
     <section class="section mission-section" id="mission-section">
         <h2 class="title">Основная миссия ЦБИ</h2>
-        <p class="mission-text_first">
+        <p class="mission-text_first" data-aos="fade-right">
             <?= ( get_field('main-mission__first' ) ) ? esc_html( get_field('main-mission__first') ) : '';?>
        </p>
-        <p class="mission-text_second">
+        <p class="mission-text_second" data-aos="fade-left">
             <?= ( get_field('main-mission__second' ) ) ? esc_html( get_field('main-mission__second') ) : '';?>
         </p>
-        <div class="mission-card">
+        <div class="mission-card" data-aos="zoom-in">
             <h2 class="mission-card__title">Совет правления</h2>
             <div class="mission-card__content">
                 <div class="mission-card__container">
