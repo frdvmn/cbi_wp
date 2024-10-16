@@ -223,7 +223,6 @@ button {
   color: white;
   min-height: 100vh;
   padding: 2vw 5vw 2vw 5vw;
-  overflow-x: hidden;
 }
 /* Секция с шапкой */
 .landing .head-section {
