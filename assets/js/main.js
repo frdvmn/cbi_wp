@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // }).mount()
 
 
-      
+    AOS.init();
 
     
 
