@@ -44,10 +44,10 @@
     <!-- Основная миссия -->
     <section class="section mission-section" id="mission-section">
         <h2 class="title">Основная миссия ЦБИ</h2>
-        <p class="mission-text_first" data-aos="fade-right">
+        <p class="mission-text_first" data-aos="fade-right"  data-aos-duration="2000">
             <?= ( get_field('main-mission__first' ) ) ? esc_html( get_field('main-mission__first') ) : '';?>
        </p>
-        <p class="mission-text_second" data-aos="fade-left">
+        <p class="mission-text_second" data-aos="fade-left"  data-aos-duration="3000">
             <?= ( get_field('main-mission__second' ) ) ? esc_html( get_field('main-mission__second') ) : '';?>
         </p>
         <div class="mission-card" data-aos="zoom-in">
