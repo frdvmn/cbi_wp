@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЦБИ</title>
+    <title>Центр ближневосточных исследований</title>
 
     <?php wp_head(); ?>
 </head>
@@ -13,12 +13,13 @@
     <!-- Начальная секция -->
     <nav class="navigation">
         <ul class="navigation__list">
-            <a href="#news-section" class="navigation__item">Новости</a>
-            <a href="#project-section" class="navigation__item">Наши проекты</a>
+            <li><a href="#news-section" class="navigation__item">Новости</a></li>
+            <li><a href="#project-section" class="navigation__item">Наши проекты</a></li>
             <!-- <a href="#experts-section" class="navigation__item">Эксперты</a> -->
-            <a href="#contacts" class="navigation__item">Контакты</a>
-            <a href="#head-section" class="navigation__item">В начало</a>
+            <li><a href="#contacts" class="navigation__item">Контакты</a></li>
+            <li><a href="#head-section" class="navigation__item">В начало</a></li>
         </ul>
+        <?= do_shortcode('[language-switcher]');?>
     </nav>
     <!-- Начальная секция -->
     <section class="section head-section" id="head-section">
@@ -71,6 +72,8 @@
 
                     $query = new WP_Query( [
                         'post_type'        => 'directors',
+                        'order'            =>  'ASC',
+                        'orderby'          => 'date',
                     ] );
 
                     if ( $query->have_posts() ) {
@@ -101,14 +104,7 @@
 
             <div class="glide__arrows" data-glide-el="controls">
                 <button 0="0" class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <svg width="
-                        131.008179" height="
-                        26.643555" viewBox="
-                        131.008=" 131.008" 26.6436" fill="
-                        none" xmlns="
-                        http://www.w3.org/2000/svg" xmlns:xlink="
-                        http://www.w3.org/1999/xlink"="
-                        http://www.w3.org/1999/xlink""=" http://www.w3.org/1999/xlink" "">
+                    <svg width="131.008179" height="26.643555" viewBox="131.008=" 131.008" 26.6436" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"="http://www.w3.org/1999/xlink""=" http://www.w3.org/1999/xlink" "">
                         <defs />
                         <path id="Arrow 2"
                             d="M6.83 15.32L14.73 23.22C15.52 24.01 15.52 25.25 14.73 26.04C13.94 26.84 12.69 26.84 11.9 26.04L0.59 14.73C-0.2 13.94 -0.2 12.69 0.59 11.9L11.9 0.59C12.69 -0.2 13.94 -0.2 14.73 0.59C15.52 1.38 15.52 2.63 14.73 3.42L6.83 11.32L131 11.32L131 15.32L6.83 15.32Z"
@@ -218,6 +214,8 @@
 
                     $query = new WP_Query( [
                         'post_type'        => 'projects',
+                        'order'            =>  'ASC',
+                        'orderby'          => 'date',
                     ] );
 
                     if ( $query->have_posts() ) {
@@ -301,7 +299,7 @@
                                             <h2 class="project-card__title"><?= get_the_title(); ?></h2>
                                             <p class="project-card__tags"><?= ( get_field('project-subtitle' ) ) ? esc_html( get_field('project-subtitle') ) : '';?></p>
                                             <p class="project-card__description"> <?= ( get_field('project-excertp' ) ) ? esc_html( get_field('project-excertp') ) : '';?></p>
-                                            <button data-micromodal-trigger="modal-project-special-<?=get_the_ID()?>" class="btn">Читать далее</button>
+                                            <button data-micromodal-trigger="modal-project-<?=get_the_ID()?>" class="btn">Читать далее</button>
                                         </div>
                                         <?php if (has_post_thumbnail()) : ?>
                                             <img src="<?= get_the_post_thumbnail_url()?>" alt="Проект" class="project-card__image">
@@ -455,6 +453,7 @@
                     </path>
                 </svg>
             </a>
+            <p class="footer__email" > © «ЦЕНТР БЛИЖНЕВОСТОЧНЫХ ИССЛЕДОВАНИЙ», 2024</p>
         </div>
     </footer>
     <!-- Модальное окно -->
@@ -566,6 +565,46 @@ if ( $query->have_posts() ) {
 wp_reset_postdata(); // Сбрасываем $post
 ?>
 
+<?php
+global $post;
+
+$query = new WP_Query( [
+    'post_type'        => 'projects',
+] );
+
+if ( $query->have_posts() ) {
+    while ( $query->have_posts() ) {
+        $query->the_post();
+        ?>
+        <?php if (get_field('project-special') !== true) : ?>
+            <div id="modal-project-<?= get_the_ID() ?>" class="modal" aria-hidden="true">
+                    <div class="modal-overlay" data-micromodal-close="data-micromodal-close"></div>
+                    <div class="modal-container" aria-modal="true" role="dialog" aria-labelledby="modal-2-title">
+                        <button class="btn-close">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30px" height="30px"
+                                aria-label="Close modal" data-micromodal-close="data-micromodal-close">
+                                <path fill="white"
+                                    d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z" />
+                                </svg>
+                        </button>
+                        <div id="modal-1-content">
+                            <h2 class="modal__title"><?= get_the_title(); ?></h2>
+                            <p class="modal__tags">
+                                <?= ( get_field('project-subtitle' ) ) ? esc_html( get_field('project-subtitle') ) : '';?>
+                            </p>
+                            <p class="modal__content"><?= the_content() ?></p>
+                        </div>
+                    </div>
+                </div>
+        <?php endif;  ?>
+        <?php
+    }
+} else {
+    echo "Добавьте проект";
+}
+
+wp_reset_postdata(); // Сбрасываем $post
+?>
 
 
 

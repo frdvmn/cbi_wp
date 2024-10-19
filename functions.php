@@ -15,7 +15,7 @@ add_action( 'wp_enqueue_scripts', 'cbi_scripts' );
 function cbi_scripts() {
 	wp_enqueue_style( 'main', get_stylesheet_uri() );
 	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.css', array('main'), false);
-	wp_enqueue_style( 'cbi', get_template_directory_uri() . '/assets/css/style.css', array('normalize'), false);
+	wp_enqueue_style( 'cbi', get_template_directory_uri() . '/assets/css/style.css', array('normalize'), '1.3');
 	wp_enqueue_style( 'glide_css', get_template_directory_uri() . '/assets/css/glide.core.min.css', array('cbi'), false);
 	wp_enqueue_style( 'aos_css', get_template_directory_uri() . '/assets/css/aos.css', array('cbi'), false);
 

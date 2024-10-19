@@ -45,11 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Слайдеры
     new Glide('.mission-slider', {
-        type: 'carousel',
         perView: 2,
         startAt: 0,
-        autoplay: 3000,
-        hoverpause: true,
         breakpoints: {
             1600: {
                 perView: 2
@@ -61,35 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }).mount()
 
     new Glide('.news-slider', {
-        type: 'carousel',
         perView: 1,
         startAt: 0,
-        autoplay: 5000,
-        hoverpause: true
     }).mount();
 
     new Glide('.projects-slider__special', {
-        type: 'carousel',
         perView: 1,
         startAt: 0,
-        autoplay: 6000,
-        hoverpause: true
     }).mount()
 
     new Glide('.projects-slider', {
-        type: 'carousel',
         perView: 1,
         startAt: 0,
-        autoplay: 3000,
-        hoverpause: true,
     }).mount()
 
     // new Glide('.experts-slider', {
-    //     type: 'carousel',
     //     perView: 2,
     //     startAt: 0,
-    //     // autoplay: 3000,
-    //     hoverpause: true,
     //     breakpoints: {
     //         1600: {
     //             perView: 2
