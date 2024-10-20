@@ -44,6 +44,9 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+.landing {
+    margin: 0 auto;
+}
 svg {
     cursor: pointer;
 }
@@ -62,7 +65,9 @@ button {
     display: block;
     width: 100%;
 }
-
+li {
+    list-style: none;
+}
 .landing .btn {
     color: white;
     padding: 10px;
@@ -157,6 +162,7 @@ button {
     -webkit-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease;
+    transform: scale(0.7);
   }
 .line {
     fill: none;
@@ -281,8 +287,6 @@ button {
 .landing .head__title {
     font-family: 'Montserrat Black';
     font-size: calc(24px + 72 * (100vw - 320px) / 1600);
-    word-spacing: 9999px;
-    word-break: break-all;
     margin: 0;
 }
 .landing .head__subtitle {
@@ -373,9 +377,9 @@ button {
 }
 .landing .mission-text_first,
 .landing .mission-text_second{
-    font-size: calc(14px + 18 * (100vw - 320px) / 1600);
+    font-size: calc(10px + 14 * (100vw - 320px) / 1600);
     text-align: left;
-    max-width: 60%;
+    max-width: 55%;
 }
 .landing .mission-text_second {
     margin-left: auto;
@@ -478,19 +482,21 @@ button {
     display: -ms-flexbox;
     display: flex;
     min-height: 500px;
-    height: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0,0,0);
+    height: 100%;
+    align-content: center;
+    align-items: center;
 }
-.landing .news-card:hover .news-card__image {
-    -webkit-filter: saturate(1);
-            filter: saturate(1);
-    -webkit-transition: 0.5s ease;
-    -o-transition: 0.5s ease;
-    transition: 0.5s ease;
-}
+/*.landing .news-card:hover .news-card__image {*/
+/*    -webkit-filter: saturate(1);*/
+/*            filter: saturate(1);*/
+/*    -webkit-transition: 0.5s ease;*/
+/*    -o-transition: 0.5s ease;*/
+/*    transition: 0.5s ease;*/
+/*}*/
 .landing .news-card__content {
     font-family: 'Montserrat Semibold';
     padding: 2vw;
@@ -510,15 +516,17 @@ button {
     font-size: calc(10px + 14 * (100vw - 320px) / 1600);
 }
 .landing .news-card__image {
-    border-radius: 0px 20px 20px 0;
-    max-width: 500px;
+    border-radius: 20px 20px 20px 20px;
     -o-object-fit: cover;
        object-fit: cover;
-    -webkit-filter: saturate(0);
-            filter: saturate(0);
-    -webkit-transition: 0.5s ease;
-    -o-transition: 0.5s ease;
-    transition: 0.5s ease;
+    /*-webkit-filter: saturate(0);*/
+    /*        filter: saturate(0);*/
+    /*-webkit-transition: 0.5s ease;*/
+    /*-o-transition: 0.5s ease;*/
+    /*transition: 0.5s ease;*/
+    height: 400px;
+    min-width: 400px;
+    margin-right: 20px;
 }
 .landing .glide__arrow {
     background: none;
@@ -595,17 +603,18 @@ button {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    -webkit-filter: saturate(0);
-            filter: saturate(0);
+    /*-webkit-filter: saturate(0);*/
+    /*        filter: saturate(0);*/
     -webkit-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease;
+    box-sizing: border-box;
 }
 
-.landing .project-card:hover .project-card__image {
-    -webkit-filter: saturate(1);
-            filter: saturate(1);
-}
+/*.landing .project-card:hover .project-card__image {*/
+/*    -webkit-filter: saturate(1);*/
+/*            filter: saturate(1);*/
+/*}*/
 
 .landing .project-card__special{
     font-family: 'Montserrat Black';
@@ -736,7 +745,7 @@ button {
 }
 .landing .footer__email {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 00px;
   }
 /* Адаптив */
 
@@ -829,6 +838,7 @@ button {
     .landing .project-card {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+
     }
     .landing .project-card__image {
         -webkit-box-ordinal-group: 0;
@@ -873,9 +883,17 @@ button {
     }
     .landing .projects-slider .project-card__title {
         margin-top: 0;
+        padding-top:4vw;
     }
     .landing .projects-slider .project-card__image {
         width: 100%;
+    }
+    .landing .footer__email {
+        margin-bottom:0;
+        font-size: 8px;
+    }
+    .landing .news-card {
+        align-content: flex-start;
     }
 }
 
@@ -933,4 +951,20 @@ button {
     .expert__content {
         width: 100%;
     }
+    .landing .news-card__image {
+        max-height: 200px;
+    }
+}
+
+
+.landing .trp-language-switcher > div {
+  box-sizing: border-box;
+  padding: 4px 20px 3px 13px;
+  background-image: url(../images/arrow-down-3101.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 3px) calc(1em + 0px);
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border:none;
 }
