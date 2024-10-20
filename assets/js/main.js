@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Функция открытия меню
     let openLandingMenu = () => {
-        let burgerIcon = document.querySelector('.landing button.menu');
-        let burgerMenu = document.querySelector('.landing nav.navigation');
+        let burgerIcon = document.querySelector('button.menu');
+        let burgerMenu = document.querySelector('nav.navigation');
         
         burgerIcon.addEventListener("click", (e) => {
             burgerIcon.classList.toggle('opened');
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Функция, скрывающая бургер иконку когда листаем вниз, показывает когда листам вверх
     let burgerHideOnScroll = () => {
-        let burgerIcon = document.querySelector('.landing button.menu');
+        let burgerIcon = document.querySelector('button.menu');
         let scrollPrev = 0;
         window.addEventListener('scroll', function(e) {
             let scrolled = this.scrollY;
