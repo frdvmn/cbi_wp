@@ -47,6 +47,9 @@ body {
 .landing {
     margin: 0 auto;
 }
+.landing {
+    margin: 0 auto;
+}
 svg {
     cursor: pointer;
 }
@@ -64,6 +67,9 @@ button {
     text-align: right;
     display: block;
     width: 100%;
+}
+li {
+    list-style: none;
 }
 li {
     list-style: none;
@@ -162,6 +168,7 @@ li {
     -webkit-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease;
+    transform: scale(0.7);
     transform: scale(0.7);
   }
 .line {
@@ -378,7 +385,9 @@ li {
 .landing .mission-text_first,
 .landing .mission-text_second{
     font-size: calc(10px + 14 * (100vw - 320px) / 1600);
+    font-size: calc(10px + 14 * (100vw - 320px) / 1600);
     text-align: left;
+    max-width: 55%;
     max-width: 55%;
 }
 .landing .mission-text_second {
@@ -605,12 +614,19 @@ li {
         align-self: center;
     /*-webkit-filter: saturate(0);*/
     /*        filter: saturate(0);*/
+    /*-webkit-filter: saturate(0);*/
+    /*        filter: saturate(0);*/
     -webkit-transition: 0.5s ease;
     -o-transition: 0.5s ease;
     transition: 0.5s ease;
     box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+/*.landing .project-card:hover .project-card__image {*/
+/*    -webkit-filter: saturate(1);*/
+/*            filter: saturate(1);*/
+/*}*/
 /*.landing .project-card:hover .project-card__image {*/
 /*    -webkit-filter: saturate(1);*/
 /*            filter: saturate(1);*/
@@ -746,6 +762,7 @@ li {
 .landing .footer__email {
     margin-top: 0;
     margin-bottom: 00px;
+    margin-bottom: 00px;
   }
 /* Адаптив */
 
@@ -839,6 +856,7 @@ li {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 
+
     }
     .landing .project-card__image {
         -webkit-box-ordinal-group: 0;
@@ -884,9 +902,17 @@ li {
     .landing .projects-slider .project-card__title {
         margin-top: 0;
         padding-top:4vw;
+        padding-top:4vw;
     }
     .landing .projects-slider .project-card__image {
         width: 100%;
+    }
+    .landing .footer__email {
+        margin-bottom:0;
+        font-size: 8px;
+    }
+    .landing .news-card {
+        align-content: flex-start;
     }
     .landing .footer__email {
         margin-bottom:0;
