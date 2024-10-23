@@ -44,35 +44,36 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerHideOnScroll();
 
     // Слайдеры
-    new Glide('.mission-slider', {
-        perView: 2,
-        startAt: 0,
-        breakpoints: {
-            1600: {
-                perView: 2
-            },
-            990: {
-                perView: 1
-            }
-            }
-    }).mount()
+    if(document.body.classList.contains('landing')) {
+        new Glide('.mission-slider', {
+            perView: 2,
+            startAt: 0,
+            breakpoints: {
+                1600: {
+                    perView: 2
+                },
+                990: {
+                    perView: 1
+                }
+                }
+        }).mount()
+    
+        new Glide('.news-slider', {
+            perView: 1,
+            startAt: 0,
+        }).mount();
+    
+        new Glide('.projects-slider__special', {
+            perView: 1,
+            startAt: 0,
+        }).mount()
+    
+        new Glide('.projects-slider', {
+            perView: 1,
+            startAt: 0,
+        }).mount()
 
-    new Glide('.news-slider', {
-        perView: 1,
-        startAt: 0,
-    }).mount();
-
-    new Glide('.projects-slider__special', {
-        perView: 1,
-        startAt: 0,
-    }).mount()
-
-    new Glide('.projects-slider', {
-        perView: 1,
-        startAt: 0,
-    }).mount()
-
-    // new Glide('.experts-slider', {
+            // new Glide('.experts-slider', {
     //     perView: 2,
     //     startAt: 0,
     //     breakpoints: {
@@ -84,6 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
     //         }
     //         }
     // }).mount()
+    }
+
+
 
 
     AOS.init();
