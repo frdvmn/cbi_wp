@@ -815,13 +815,15 @@ li {
 }
 .blog .article__content {
     margin-right: 20px;
+    flex-grow: 1;
 }
 .blog .article__category {
     color: #8c8c8c;
     text-transform: uppercase;
     text-decoration: none;
     font-size: calc(6px + 6 * (100vw - 320px) / 1600);
-    margin: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
     transition: 0.4s ease;
     padding: 5px;
     border: 1px solid #8c8c8c;
@@ -833,7 +835,7 @@ li {
     font-family: 'Montserrat Black';
     font-size: calc(14px + 18 * (100vw - 320px) / 1600);
 }
-.blog .article__text {
+.blog .article__text{
     font-size: calc(8px + 10 * (100vw - 320px) / 1600);
 }
 .blog .articles {
@@ -859,22 +861,23 @@ li {
 .blog .pagination {
     margin-bottom: 20px;
 }
-.blog .pagination__element{
+.blog .page-numbers{
     color: white;
     text-decoration: none;
     padding: 10px;
     transition: 0.4s ease;
 }
 
-.blog .pagination__element:hover {
+.blog .page-numbers:hover {
     background: #3686c7;
     transition: 0.4s ease;
 }
 
-.blog .pagination__element.active {
+.blog .page-numbers.current {
     background: #3686c7;
 }
 .blog .article__img--container {
+    width: 300px;
     min-width: 300px;
     height: 300px;
     box-sizing: border-box;
@@ -918,6 +921,7 @@ li {
 }
 .blog .btn {
     font-size: calc(6px + 6 * (100vw - 320px) / 1600);
+    text-decoration: none;
 }
 .blog .head-section__blog {
     text-align: center;
@@ -933,6 +937,11 @@ li {
     padding-left: 40px;
     padding-right: 40px;
     font-size: calc(12px + 10 * (100vw - 320px) / 1600);
+}
+.blog .article__time {
+    margin: 0;
+    color: #525253;
+    font-size: calc(8px + 8 * (100vw - 320px) / 1600);
 }
 /* Адаптив */
 
