@@ -156,7 +156,7 @@ function true_remove_default_menus(){
  
 
 	remove_menu_page( 'edit-comments.php' );          // Комментарии
-	remove_menu_page( 'themes.php' );                 // Внешний вид
+	// remove_menu_page( 'themes.php' );                 // Внешний вид
 	// remove_menu_page( 'plugins.php' );                // Плагины
 	remove_menu_page( 'users.php' );                  // Пользователи
  
@@ -179,3 +179,18 @@ function my_navigation_template( $template, $class ){
 	</nav>
 	';
 }
+
+add_action( 'widgets_init', 'cbi_widgets_init');
+function cbi_widgets_init(){
+	register_sidebar([
+		'name'          => 'Сайдбар блога',
+		'id'            => "sidebar-blog",
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="sidebar-categories__title">',
+		'after_title'   => '</h3>'
+	]);
+}
+
+add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+add_filter( 'use_widgets_block_editor', '__return_false' );
