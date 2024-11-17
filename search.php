@@ -46,12 +46,7 @@
             'class'        => 'pagination', // CSS класс, добавлено в 5.5.0.
         ]); ?>
     </section>
-    <?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
-        <aside class="sidebar">
-		<?php dynamic_sidebar( 'sidebar-blog' ); ?>
-           
-        </aside>
-    <?php endif; ?>
+    <?php get_sidebar() ?>
 
 
 

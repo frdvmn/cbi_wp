@@ -367,6 +367,14 @@ li {
     margin-bottom: 30px;
     margin-top: 20px;
 }
+.title.blog__title {
+    font-size: calc(8px + 40 * (100vw - 320px) / 1600);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.title.blog__title::before {
+    display: none;
+}
 .title::before {
     content: '';
     position: absolute;
@@ -1010,6 +1018,7 @@ li {
        .blog .article__img--container {
         min-width: 200px;
         height: 200px;
+        width: 200px;
     }
 }
 
